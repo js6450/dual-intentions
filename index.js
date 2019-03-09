@@ -29,8 +29,8 @@ app.get("/", (req, res) => {
 
 // Show all my submissions
 app.get("/logs", (req, res) => {
-    res.sendFile('/logs/logs.html')
-})
+    res.sendFile('/logs/logs.html');
+});
 
 // Show all my submissions
 // our API
