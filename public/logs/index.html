@@ -11,33 +11,33 @@
         var peer = null;
 
         var init = function() {
-            myvideo = document.getElementById('myvideo');
+           // myvideo = document.getElementById('myvideo');
 
             window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
             navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
-            if (navigator.getUserMedia) {
-                // http://src.chromium.org/svn/trunk/src/chrome/test/data/webrtc/manual/constraints.html
-                navigator.getUserMedia({video: true, audio: true}, function(stream) {
-                        mystream = stream;
-
-                        myvideo.srcObject = stream;
-
-                        myvideo.onloadedmetadata = function(e) {
-                            myvideo.play();
-//         myvideo.width = e.videoWidth;
-//         myvideo.height = e.videoHeight;
-                            console.log(e);
-                            // draw();
-
-                        };
-
-                    }, function(err) {
-                        console.log('Failed to get local stream' ,err);
-                        alert("Failed to get local stream " + err);
-                    }
-                );
-            }
+//             if (navigator.getUserMedia) {
+//                 // http://src.chromium.org/svn/trunk/src/chrome/test/data/webrtc/manual/constraints.html
+//                 navigator.getUserMedia({video: true, audio: true}, function(stream) {
+//                         mystream = stream;
+//
+//                         myvideo.srcObject = stream;
+//
+//                         myvideo.onloadedmetadata = function(e) {
+//                             myvideo.play();
+// //         myvideo.width = e.videoWidth;
+// //         myvideo.height = e.videoHeight;
+//                             console.log(e);
+//                             // draw();
+//
+//                         };
+//
+//                     }, function(err) {
+//                         console.log('Failed to get local stream' ,err);
+//                         alert("Failed to get local stream " + err);
+//                     }
+//                 );
+//             }
 
 
             peer = new Peer('watcher', {host: 'localhost', port: 9000, path: '/'});
