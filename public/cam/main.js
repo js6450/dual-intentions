@@ -1,6 +1,6 @@
 let camList = [];
 
-let cam;
+let camTwo;
 let redLayer, greenLayer, blueLayer;
 let bThresh = 40;
 let contrast = 35;
@@ -22,15 +22,15 @@ function setup(){
 
         console.log('add cameras');
 
-        cam = createCapture(VIDEO, {
+        camTwo = createCapture(VIDEO, {
             video: {
                 width: 640,
                 height: 480,
                 deviceId: camList[0].deviceId
             }
         });
-        cam.size(640, 480);
-        cam.hide();
+        camTwo.size(640, 480);
+        camTwo.hide();
     });
 
     redLayer = createGraphics(320, 240);
@@ -44,11 +44,11 @@ function setup(){
 
 function draw(){
 
-    if(cam != null){
+    if(camTwo != null){
         // greenLayer.background(255);
-        // image(cam, 0, 0);
+        // image(camTwo, 0, 0);
         noStroke();
-        cam.loadPixels();
+        camTwo.loadPixels();
         redLayer.loadPixels();
         greenLayer.loadPixels();
         blueLayer.loadPixels();
@@ -59,11 +59,11 @@ function draw(){
             blueLayer.pixels[i] = 0;
         }
 
-        for(let y = 0; y < cam.height; y++){
-            for(let x = 0; x < cam.width; x++){
-                let i = (cam.width * y + x) * 4;
-                // let mappedX = map(x, 0, cam.width, 0, width);
-                // let mappedY = map(y, 0, cam.height, 0, height);
+        for(let y = 0; y < camTwo.height; y++){
+            for(let x = 0; x < camTwo.width; x++){
+                let i = (camTwo.width * y + x) * 4;
+                // let mappedX = map(x, 0, camTwo.width, 0, width);
+                // let mappedY = map(y, 0, camTwo.height, 0, height);
 
                 let c = color(pixels[i], pixels[i + 1], pixels[i + 2]);
                 let b = brightness(c);
@@ -101,9 +101,9 @@ function draw(){
         greenLayer.updatePixels();
         blueLayer.updatePixels();
 
-        cam.updatePixels();
+        camTwo.updatePixels();
 
-        image(cam, 0, 0, width, width * (240 / 320));
+        image(camTwo, 0, 0, width, width * (240 / 320));
 
         if(random() > 0.001){
 
@@ -158,7 +158,7 @@ function draw(){
     let date = "" + Date();
 
     textFont('Courier');
-    textSize(18);
+    textSize(12);
     fill(255);
     stroke(0);
     text(date, width - textWidth(date) - 25, 30);

@@ -15,7 +15,8 @@ var peer = new Peer({host: 'liveweb-new.itp.io', port: 9000, path: '/'});
 
 
 function setup(){
-    createCanvas(windowWidth, windowHeight);
+    let cvs = createCanvas(windowWidth * 0.48, windowWidth * 0.48 * 0.695).parent('#cameraTwo');
+    cvs.id('camTwo');
 
     navigator.mediaDevices.enumerateDevices().then(function(devices){
         console.log(devices);
@@ -90,7 +91,7 @@ function draw(){
     let date = "" + Date();
 
     textFont('Courier');
-    textSize(18);
+    textSize(12);
     fill(255);
     stroke(0);
     text(date, width - textWidth(date) - 25, 30);
@@ -110,11 +111,11 @@ let streamObject = null;
 
 function captureCallback(s){
     streamObject = s;
-    //initwebrtc(s);
 }
 
 function keyPressed(){
     if(key == 1){
+        console.log('sending stream object');
         initwebrtc(streamObject);
     }
 }
