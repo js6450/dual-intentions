@@ -2,13 +2,15 @@ console.log("hello from logs")
 
 let myData;
 let $entries;
+
+let numLogs = 0;
 function preload(){
     myData = loadJSON('/api');
 }
 
 function setup(){
     noCanvas();
-    noLoop();
+   // noLoop();
 
     $entries = select("#entries");
     // console.log(myData);
@@ -29,11 +31,22 @@ function myEntryEl(item){
 
 function draw(){
 
-    for(p in myData){
-        let item = myData[p];
-        let itemEl = myEntryEl(item);
-        // console.log(itemEl)
-        entries.innerHTML += itemEl
+    if(frameCount % 60 == 0){
+        myData = loadJSON('/api');
+        // console.log(Object.keys(myData).length);
+    }
+
+    let currentNumLog = Object.keys(myData).length;
+
+    if(currentNumLog > 0){
+        for(let i = numLogs; i < currentNumLog; i++){
+            let item = myData[i];
+            let itemEl = myEntryEl(item);
+            // console.log(itemEl)
+            entries.innerHTML += itemEl
+        }
+
+        numLogs = currentNumLog;
     }
 
 }
