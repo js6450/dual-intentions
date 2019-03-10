@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Logs</title>
+	<title>YOU ARE BEING WATCHED</title>
 	<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 	<script src="peer.min.js"></script>
 	<script type="text/javascript">
@@ -78,15 +78,24 @@
         };
 	</script>
 </head>
-<body onload="init()" class="code lh-copy w-100 h-100 bg-navy pa4">
-	<main class="w-100 h-100 flex flex-column">
-		<header class="w-100 tc">
-			<h1 class="f1 yellow b">My Logs</h1>
-		</header>
-		<section id="entries" class="w-100 flex flex-row flex-wrap justify-center">
 
-		</section>
-
+<style>
+	.log {
+		width: 23%;
+		display: inline-block;
+		font-size: x-small;
+		flex-basis: auto;
+	}
+	body {
+		background: black;
+	}
+	section#entries {
+		color: white;
+	}
+</style>
+<body onload="init()">
+	<main>
+		<section id="entries"></section>
 	</main>
 
 	<!-- p5 libraries -->
