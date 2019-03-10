@@ -59,7 +59,7 @@ function draw(){
     background(220);
     image(capture,width/2,height/2, width*1.3, height);
 
-    // if(frameCount % 15 == 0){
-    //     handleSubmit();
-    // }
+    if(frameCount % 15 == 0){
+        handleSubmit();
+    }
 }
