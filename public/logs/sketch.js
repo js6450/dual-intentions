@@ -32,7 +32,7 @@ function draw(){
     for(p in myData){
         let item = myData[p];
         let itemEl = myEntryEl(item);
-        console.log(itemEl)
+        // console.log(itemEl)
         entries.innerHTML += itemEl
     }
 
