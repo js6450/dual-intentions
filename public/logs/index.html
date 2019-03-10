@@ -69,7 +69,7 @@
             call.on('stream', function(remoteStream) {
                 // Show stream in some video/canvas element.
 
-                var othervideo = document.createElement("video");
+                var othervideo = document.getElementById('videoFeed');
                 othervideo.src = window.URL.createObjectURL(remoteStream) || remoteStream;
                 document.body.appendChild(othervideo);
                 othervideo.play();
@@ -94,6 +94,7 @@
 	}
 </style>
 <body onload="init()">
+	<div id="videoFeed"></div>
 	<main>
 		<section id="entries"></section>
 	</main>
