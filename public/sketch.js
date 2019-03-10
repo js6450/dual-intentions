@@ -7,7 +7,11 @@ let rectWidth, rectHeight, yMin;
 let mappedX, mappedY, mappedI;
 
 function setup(){
+
+    console.log('setting up hidden layer');
+
     createCanvas(160, 120).parent("#mySketch");
+
     videoInput = createCapture(VIDEO);
     videoInput.hide();
     videoInput.size(width, height);
