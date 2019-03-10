@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="849449e5-69de-4561-8b97-d7d83a05cc47" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db" beforeDir="false" afterPath="$PROJECT_DIR$/db/db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/cam/camTwo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/cam/camTwo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/logs/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/logs/sketch.js" afterDir="false" />
@@ -25,15 +26,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="101">
               <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/logs/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1547">
-              <caret line="105" column="10" lean-forward="true" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -65,11 +57,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/logs/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1442">
+              <caret line="105" column="10" lean-forward="true" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/logs/sketch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="402">
+              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -92,7 +93,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="camTwo.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="camTwo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/cam/camTwo.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="386">
@@ -137,9 +138,9 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/db/db" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/public/logs/sketch.js" />
         <option value="$PROJECT_DIR$/public/sketch.js" />
         <option value="$PROJECT_DIR$/public/cam/camTwo.js" />
+        <option value="$PROJECT_DIR$/public/logs/sketch.js" />
       </list>
     </option>
   </component>
@@ -238,12 +239,12 @@
       <workItem from="1552170565965" duration="661000" />
       <workItem from="1552171290537" duration="569000" />
       <workItem from="1552172340942" duration="14817000" />
-      <workItem from="1552194534685" duration="388000" />
+      <workItem from="1552194534685" duration="641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16435000" />
+    <option name="totallyTimeSpent" value="16688000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="497" y="23" width="1120" height="1027" extended-state="0" />
@@ -447,13 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/logs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="105" column="10" lean-forward="true" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -468,17 +462,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/logs/sketch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/cam/camTwo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="162" column="35" selection-start-line="162" selection-start-column="35" selection-end-line="162" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/logs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1442">
+          <caret line="105" column="10" lean-forward="true" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/logs/sketch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
         </state>
       </provider>
     </entry>
