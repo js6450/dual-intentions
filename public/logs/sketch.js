@@ -42,7 +42,7 @@ function keyPressed(){
 
 function draw(){
 
-    if(frameCount % 60 == 0){
+    if(frameCount % 20 == 0){
         myData = loadJSON('/api');
     }
 
