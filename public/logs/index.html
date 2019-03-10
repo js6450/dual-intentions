@@ -54,7 +54,7 @@
 
                     console.log(remoteStream);
 
-                    var othervideo = document.createElement("video");
+                    var othervideo = document.getElementById('videoFeed');
                     othervideo.srcObject = remoteStream;
                     document.body.appendChild(othervideo);
                     othervideo.play();
@@ -76,7 +76,7 @@
 
             });
         };
-	</script>
+    </script>
 </head>
 
 <style>
