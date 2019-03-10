@@ -11,7 +11,7 @@ function setup(){
     noLoop();
 
     $entries = select("#entries");
-    console.log(myData);
+    // console.log(myData);
 }
 
 function myEntryEl(item){
