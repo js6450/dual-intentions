@@ -1,5 +1,3 @@
-// console.log("hello from index")
-
 let videoInput;
 let cropped;
 
@@ -13,8 +11,7 @@ function setup(){
     videoInput = createCapture(VIDEO);
     videoInput.hide();
     videoInput.size(width, height);
-    // imageMode(CENTER);
-    // getCurrentPosition(doThisOnLocation)
+
     ctracker = new clm.tracker();
     ctracker.init(pModel);
     ctracker.start(videoInput.elt);
@@ -31,10 +28,7 @@ function handleSubmit(){
     let output = {
         image: ''
     };
-    
-    // output.location.lat = locationData.latitude
-    // output.location.lon = locationData.longitude
-    //
+
     const last_img = get()
     output.image = last_img.canvas.toDataURL()
 
@@ -49,23 +43,9 @@ function handleSubmit(){
         body: JSON.stringify(output)
     }
     fetch(`/api`, options).then(result => {
-        // updateMyDots()
         console.log('success')
     })
-
-    // httpPost("/api", output, (result) =>{
-    //     // console.log(result);
-    //     console.log("success")
-    // });
 }
-
-// function doThisOnLocation(position){
-//     locationData = position
-//     console.log(position.latitude)
-//     console.log(position.longitude)
-//     select("#lat").html( nfc(position.latitude, 4) )
-//     select("#lon").html( nfc(position.longitude, 4))
-// }
 
 function draw(){
 

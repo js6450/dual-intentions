@@ -1,18 +1,11 @@
 let camList = [];
 
 let cam;
-let bThresh = 40;
-let contrast = 35;
-let bright = 30;
-let offset = 50;
 
 let blackLineIndex = 0;
 
-let globalY = 0;
-
 var mystream;
 
-// We'll use a global variable to hold on to our id from PeerJS
 var peer_id = null;
 
 // Register for an API Key:	http://peerjs.com/peerserver
@@ -68,19 +61,6 @@ function draw(){
     if(cam != null){
 
         cam.loadPixels();
-
-        // if(frameCount % 10 == 0){
-        //
-        //     y++;
-        //
-        //     if(y > cam.height - 1){
-        //         y = 0;
-        //     }
-        //
-        //     console.log(y);
-        //
-        // }
-
 
        for(let y = 0; y < cam.height; y++){
             for(let x = 0; x < cam.width; x++){

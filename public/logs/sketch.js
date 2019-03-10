@@ -1,5 +1,3 @@
-console.log("hello from logs")
-
 let myData;
 let $entries;
 
@@ -10,25 +8,21 @@ function preload(){
 
 function setup(){
     noCanvas();
-   // noLoop();
 
     $entries = select("#entries");
-    // console.log(myData);
 
     let currentNumLog = Object.keys(myData).length;
 
     for(let i = numLogs; i < currentNumLog; i++){
         let item = myData[i];
         let itemEl = myEntryEl(item);
-        // console.log(itemEl)
         entries.innerHTML += itemEl;
     }
 }
 
 function myEntryEl(item){
     const myImage = `<img src="${item.image}">`;
-    // const lat = nfc(item.location.lat, 4)
-    // const lon = nfc(item.location.lon, 4)
+
     const dateString = moment(item.created).toDate().toString();
     return`
         <div class="log">
@@ -42,16 +36,11 @@ function draw(){
 
     if(frameCount % 60 == 0){
         myData = loadJSON('/api');
-        // console.log(Object.keys(myData).length);
     }
 
     let currentNumLog = Object.keys(myData).length;
 
     if(currentNumLog > 0 && numLogs < currentNumLog){
-        // let item = myData[0];
-        // let itemEl = myEntryEl(item);
-        // // console.log(itemEl)
-        // entries.innerHTML += itemEl;
         for(let i = 0; i < currentNumLog - numLogs; i++){
 
             console.log("numLogs", numLogs);
