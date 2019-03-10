@@ -1,18 +1,30 @@
 // console.log("hello from index")
-let capture;
-let submitButton;
-let locationData;
 
+let videoInput;
+let cropped;
+
+let leftX, leftY, rightX, rightY;
+let rectWidth, rectHeight, yMin;
+
+let mappedX, mappedY, mappedI;
 
 function setup(){
-    createCanvas(200, 200).parent("#mySketch");
-    capture = createCapture(VIDEO);
-    capture.hide();
-    capture.size(width, height);
-    imageMode(CENTER);
+    createCanvas(160, 120).parent("#mySketch");
+    videoInput = createCapture(VIDEO);
+    videoInput.hide();
+    videoInput.size(width, height);
+    // imageMode(CENTER);
     // getCurrentPosition(doThisOnLocation)
+    ctracker = new clm.tracker();
+    ctracker.init(pModel);
+    ctracker.start(videoInput.elt);
 
-    pixelDensity(0.5);
+    fill(255);
+
+    cropped = createGraphics(width, height);
+
+    pixelDensity(1);
+    cropped.pixelDensity(1);
 }
 
 function handleSubmit(){
@@ -56,10 +68,53 @@ function handleSubmit(){
 // }
 
 function draw(){
-    background(220);
-    image(capture,width/2,height/2, width*1.3, height);
 
-    if(frameCount % 15 == 0){
-        handleSubmit();
+    cropped.background(0);
+
+    positions = ctracker.getCurrentPosition();
+
+    if (positions[1] != null) {
+
+        leftX = int(positions[1][0]);
+        leftY = int(positions[1][1]);
+        rightX = int(positions[13][0]);
+        rightY = int(positions[13][1]);
+
+        rectWidth = int(rightX - leftX);
+        rectHeight = rectWidth;
+        yMin = int((leftY + rightY) / 2 - rectHeight / 2);
+
+        videoInput.loadPixels();
+
+        cropped.loadPixels();
+
+        for(let y = 0; y < cropped.height; y++){
+            for(let x = 0; x < cropped.width; x++){
+
+                let i = ((y * cropped.width) + x) * 4;
+
+                mappedX = map(x, 0, width, leftX, rightX);
+                mappedY = map(y, 0, height, yMin, yMin + rectHeight);
+
+                mappedI = ((int(mappedY) * videoInput.width) + int(mappedX)) * 4;
+
+                cropped.pixels[i] = pixels[mappedI];
+                cropped.pixels[i + 1] = pixels[mappedI + 1];
+                cropped.pixels[i + 2] = pixels[mappedI + 2];
+                cropped.pixels[i + 3] = 255;
+
+            }
+        }
+
+        cropped.updatePixels();
+
+        image(cropped, 0, 0);
+
+        if(frameCount % 15 == 0){
+            handleSubmit();
+        }
+
     }
+
+
 }

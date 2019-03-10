@@ -14,6 +14,15 @@ function setup(){
 
     $entries = select("#entries");
     // console.log(myData);
+
+    let currentNumLog = Object.keys(myData).length;
+
+    for(let i = numLogs; i < currentNumLog; i++){
+        let item = myData[i];
+        let itemEl = myEntryEl(item);
+        // console.log(itemEl)
+        entries.innerHTML += itemEl;
+    }
 }
 
 function myEntryEl(item){
@@ -38,13 +47,20 @@ function draw(){
 
     let currentNumLog = Object.keys(myData).length;
 
-    if(currentNumLog > 0){
-        for(let i = numLogs; i < currentNumLog; i++){
-            let item = myData[i];
-            let itemEl = myEntryEl(item);
-            // console.log(itemEl)
-            entries.innerHTML += itemEl
-        }
+    if(currentNumLog > 0 && numLogs < currentNumLog){
+
+        console.log("numLogs", numLogs);
+        console.log("currentNumLog", currentNumLog);
+        let item = myData[0];
+        let itemEl = myEntryEl(item);
+        // console.log(itemEl)
+        entries.innerHTML += itemEl;
+        // for(let i = numLogs; i < currentNumLog; i++){
+        //     let item = myData[i];
+        //     let itemEl = myEntryEl(item);
+        //     // console.log(itemEl)
+        //     entries.innerHTML += itemEl;
+        // }
 
         numLogs = currentNumLog;
     }
