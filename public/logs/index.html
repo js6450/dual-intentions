@@ -9,6 +9,8 @@
         var mypeerid = null;
         var peer = null;
 
+        var otherStream = null;
+
         var init = function() {
            // myvideo = document.getElementById('myvideo');
 
@@ -52,6 +54,8 @@
                 call.on('stream', function(remoteStream) {
 
                     console.log(remoteStream);
+
+                    otherStream = remoteStream;
 
                     var othervideo = document.createElement("video");
                     othervideo.srcObject = remoteStream;
@@ -107,6 +111,7 @@
 
 </style>
 <body onload="init()">
+	<video autoplay id="stream"></video>
 	<main>
 		<section id="entries"></section>
 	</main>

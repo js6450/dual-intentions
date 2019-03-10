@@ -37,7 +37,7 @@ function setup(){
                 height: 480,
                 deviceId: camList[1].deviceId
             }
-        }, initwebrtc);
+        }, captureCallback);
         cam.size(640, 480);
         cam.hide();
     });
@@ -106,10 +106,18 @@ function truncateColor(value) {
     return value;
 }
 
+let streamObject = null;
+
 function captureCallback(s){
-    initwebrtc(s);
+    streamObject = s;
+    //initwebrtc(s);
 }
 
+function keyPressed(){
+    if(key == 1){
+        initwebrtc(streamObject);
+    }
+}
 
 // Get an ID from the PeerJS server
 peer.on('open', function(id) {
