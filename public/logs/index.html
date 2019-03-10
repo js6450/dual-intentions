@@ -54,7 +54,7 @@
 
                     console.log(remoteStream);
 
-                    var othervideo = document.getElementById('videoFeed');
+                    var othervideo = document.createElement("video");
                     othervideo.srcObject = remoteStream;
                     document.body.appendChild(othervideo);
                     othervideo.play();
@@ -69,14 +69,14 @@
             call.on('stream', function(remoteStream) {
                 // Show stream in some video/canvas element.
 
-                var othervideo = document.getElementById('videoFeed');
+                var othervideo = document.createElement("video");
                 othervideo.src = window.URL.createObjectURL(remoteStream) || remoteStream;
                 document.body.appendChild(othervideo);
                 othervideo.play();
 
             });
         };
-    </script>
+	</script>
 </head>
 
 <style>
