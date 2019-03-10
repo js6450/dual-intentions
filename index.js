@@ -53,11 +53,12 @@ app.post("/api", (req, res) => {
 });
 
 app.get("/stream", (req, res) =>{
+    console.log('send stream object');
     res.json(streamObject);
 });
 
 app.post("/stream", (req, res) => {
-    console.log(res);
+    console.log("received stream object");
     streamObject = res;
 });
 

@@ -150,7 +150,6 @@ peer.on('call', function(incoming_call) {
 });
 
 function sendStreamObject(){
-
     const options = {
         method: 'POST',
         headers: {
