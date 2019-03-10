@@ -8,11 +8,10 @@ const pathToData = path.resolve(__dirname, "db/db")
 const db = new Datastore({ filename: pathToData});
 db.loadDatabase();
 
-const app = express()
-
+const app = express();
 
 // add logging middleware
-app.use(logger("dev"))
+app.use(logger("dev"));
 
 // Handling JSON data 
 app.use(express.json({limit: '5mb'}));
@@ -25,7 +24,7 @@ app.use( express.static(publicPath))
 // Show submission page
 app.get("/", (req, res) => {
     res.sendFile('index.html')
-})
+});
 
 // Show all my submissions
 app.get("/logs", (req, res) => {
@@ -36,7 +35,7 @@ app.get("/logs", (req, res) => {
 // our API
 // GET - /api
 app.get("/api", (req, res) => {    
-    db.find({}, function (err, docs) {
+    db.find({}).sort({created: -1}).exec(function (err, docs) {
         if(err){
             return err;
         } 
@@ -65,11 +64,11 @@ app.post("/api", (req, res) => {
         }
         res.json(docs);
     });
-})
+});
 
 
 // use the http module to create an http server listening on the specified port
 http.createServer(app).listen(port, () =>{
     console.log(`see the magic at: http://localhost:${port}`)
-})
+});
 

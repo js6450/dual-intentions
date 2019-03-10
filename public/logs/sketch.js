@@ -48,19 +48,20 @@ function draw(){
     let currentNumLog = Object.keys(myData).length;
 
     if(currentNumLog > 0 && numLogs < currentNumLog){
+        // let item = myData[0];
+        // let itemEl = myEntryEl(item);
+        // // console.log(itemEl)
+        // entries.innerHTML += itemEl;
+        for(let i = 0; i < currentNumLog - numLogs; i++){
 
-        console.log("numLogs", numLogs);
-        console.log("currentNumLog", currentNumLog);
-        let item = myData[0];
-        let itemEl = myEntryEl(item);
-        // console.log(itemEl)
-        entries.innerHTML += itemEl;
-        // for(let i = numLogs; i < currentNumLog; i++){
-        //     let item = myData[i];
-        //     let itemEl = myEntryEl(item);
-        //     // console.log(itemEl)
-        //     entries.innerHTML += itemEl;
-        // }
+            console.log("numLogs", numLogs);
+            console.log("currentNumLog", currentNumLog);
+
+            let item = myData[i];
+            let itemEl = myEntryEl(item);
+            // console.log(itemEl)
+            entries.innerHTML = itemEl + entries.innerHTML;
+        }
 
         numLogs = currentNumLog;
     }
