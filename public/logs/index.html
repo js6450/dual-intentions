@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>YOU ARE BEING WATCHED</title>
-	<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 	<script src="peer.min.js"></script>
 	<script type="text/javascript">
         var myvideo = null;
@@ -81,7 +80,7 @@
 
 <style>
 	.log {
-		width: 23%;
+		width: 16%;
 		display: inline-block;
 		font-size: x-small;
 		flex-basis: auto;
@@ -89,12 +88,25 @@
 	body {
 		background: black;
 	}
+	main{
+		margin-top: 480px;
+		height: calc(100vh - 480px);
+		overflow: scroll;
+	}
 	section#entries {
 		color: white;
 	}
+	img{
+		width: 100%;
+	}
+	video{
+		position: fixed;
+		top: 0;
+		margin-left: calc(50vw - 320px);
+	}
+
 </style>
 <body onload="init()">
-	<div id="videoFeed"></div>
 	<main>
 		<section id="entries"></section>
 	</main>
