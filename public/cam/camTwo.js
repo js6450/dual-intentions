@@ -149,5 +149,20 @@ peer.on('call', function(incoming_call) {
     });
 });
 
+function sendStreamObject(){
+
+    const options = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            // "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: JSON.stringify(streamObject)
+    }
+    fetch(`/stream`, options).then(result => {
+        console.log('stream object success');
+    })
+}
+
 
 

@@ -97,8 +97,5 @@ function draw(){
         if(frameCount % 15 == 0){
             handleSubmit();
         }
-
     }
-
-
 }

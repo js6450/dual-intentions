@@ -10,13 +10,15 @@ db.loadDatabase();
 
 const app = express();
 
+let streamObject = null;
+
 app.use(logger("dev"));
 
 app.use(express.json({limit: '5mb'}));
 app.use(express.urlencoded({limit: '5mb'}));
 
-const publicPath = path.resolve(__dirname, 'public')
-app.use( express.static(publicPath))
+const publicPath = path.resolve(__dirname, 'public');
+app.use( express.static(publicPath));
 
 app.get("/", (req, res) => {
     res.sendFile('index.html')
@@ -48,6 +50,15 @@ app.post("/api", (req, res) => {
         }
         res.json(docs);
     });
+});
+
+app.get("/stream", (req, res) =>{
+    res.json(streamObject);
+});
+
+app.post("/stream", (req, res) => {
+    console.log(res);
+    streamObject = res;
 });
 
 http.createServer(app).listen(port, () =>{

@@ -1,6 +1,8 @@
 let myData;
 let $entries;
 
+let streamObj = null;
+
 let numLogs = 0;
 function preload(){
     myData = loadJSON('/api');
@@ -32,6 +34,12 @@ function myEntryEl(item){
     `
 }
 
+function keyPressed(){
+    if(key == 1){
+        streamObj = loadJSON('/stream');
+    }
+}
+
 function draw(){
 
     if(frameCount % 60 == 0){
@@ -54,7 +62,4 @@ function draw(){
 
         numLogs = currentNumLog;
     }
-
-
-
 }
