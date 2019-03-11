@@ -10,6 +10,7 @@
         var peer = null;
 
         var otherStream = null;
+        var othervideo = null;
 
         var init = function() {
            // myvideo = document.getElementById('myvideo');
@@ -57,10 +58,13 @@
 
                     otherStream = remoteStream;
 
-                    var othervideo = document.createElement("video");
-                    othervideo.srcObject = remoteStream;
-                    document.body.appendChild(othervideo);
-                    othervideo.play();
+                    othervideo = document.createElement("video");
+                    if(othervideo){
+                        othervideo.srcObject = remoteStream;
+                        document.body.appendChild(othervideo);
+                        othervideo.play();
+					}
+
 
                 });
             });
@@ -73,10 +77,10 @@
                 // Show stream in some video/canvas element.
 
                 var othervideo = document.createElement("video");
+                othervideo.id('stream');
                 othervideo.src = window.URL.createObjectURL(remoteStream) || remoteStream;
                 document.body.appendChild(othervideo);
                 othervideo.play();
-
             });
         };
 	</script>
@@ -111,7 +115,7 @@
 
 </style>
 <body onload="init()">
-	<video autoplay id="stream"></video>
+	<!--<video autoplay id="stream"></video>-->
 	<main>
 		<section id="entries"></section>
 	</main>
