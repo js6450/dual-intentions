@@ -61,7 +61,8 @@
                     othervideo = document.createElement("video");
                     othervideo.srcObject = remoteStream;
                     document.body.appendChild(othervideo);
-                    othervideo.setAttribute('onloaded', "othervideo.play()");
+                    othervideo.play();
+                    //othervideo.setAttribute('onloaded', "othervideo.play()");
                 });
             });
         };
@@ -112,7 +113,7 @@
 	}
 
 </style>
-<body onload="init()">
+<body onkeypress="othervideo.play()" onload="init()">
 	<!--<video autoplay id="stream"></video>-->
 	<main>
 		<section id="entries"></section>
