@@ -59,13 +59,11 @@
                     otherStream = remoteStream;
 
                     othervideo = document.createElement("video");
-                    if(othervideo){
+                    othervideo.setAttribute('onloadedmetadata', function(){
                         othervideo.srcObject = remoteStream;
                         document.body.appendChild(othervideo);
                         othervideo.play();
-					}
-
-
+					});
                 });
             });
         };
