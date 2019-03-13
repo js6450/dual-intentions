@@ -10,6 +10,42 @@ db.loadDatabase();
 
 const app = express();
 
+const fs = require('fs');
+const dataOrigin = "db/db-backup.json";
+const dataDest = "/renders/";
+let dataIndex = 0;
+let imgData = [];
+
+let searchFor = "data:image/jpeg;base64,";
+
+function renderImages(){
+    fs.readFile(dataOrigin, 'utf8', function(err, data){
+        console.log('start parsing');
+        imgData = JSON.parse(data);
+        console.log("total num of images: " + imgData.length);
+
+        for(let i = 0; i < imgData.length; i++){
+            let dat = imgData[i].image;
+            let strippedImage = dat.slice(dat.indexOf(searchFor) + searchFor.length);
+            console.log(strippedImage);
+            let binaryImage = new Buffer(strippedImage, 'base64');
+            fs.writeFile(__dirname + dataDest + i + ".png", binaryImage, function(err) {
+                if(err){
+                    return console.log(err);
+                }
+            });
+        }
+    })
+
+
+}
+
+//renderImages();
+//
+// var strippedImage = data.slice(data.indexOf(searchFor) + searchFor.length);
+// var binaryImage = new Buffer(strippedImage, 'base64');
+// fs.writeFileSync(__dirname + '/renders/theimage.jpg', binaryImage);
+
 let streamObject = null;
 
 app.use(logger("dev"));
