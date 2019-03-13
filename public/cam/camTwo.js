@@ -133,7 +133,7 @@ peer.on('error', function(err) {
 function initwebrtc(stream) {
     mystream = stream;
     print("Calling watcher");
-    var call = peer.call("watcher", mystream);
+    var call = peer.call("dual-watcher", mystream);
     call.on('stream', function(remoteStream) {
         print("Got a response");
         // Don't do anything

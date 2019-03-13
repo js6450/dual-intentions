@@ -15,6 +15,8 @@
         var init = function() {
            // myvideo = document.getElementById('myvideo');
 
+			console.log('set up peer');
+
             window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
             navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -42,7 +44,7 @@
 //             }
 
 
-            peer = new Peer('watcher', {host: 'liveweb-new.itp.io', port: 9000, path: '/'});
+            peer = new Peer('dual-watcher', {host: 'liveweb-new.itp.io', port: 9000, path: '/'});
 
             peer.on('open', function(id) {
                 console.log('My peer ID is: ' + id);
