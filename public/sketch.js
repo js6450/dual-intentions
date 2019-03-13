@@ -94,7 +94,7 @@ function draw(){
 
         image(cropped, 0, 0);
 
-        if(frameCount % 3 == 0){
+        if(frameCount % 12 == 0){
             handleSubmit();
         }
     }
